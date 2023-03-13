@@ -1,0 +1,12 @@
+.App {
+  height: 100vh;
+}
+
+.connect {
+  position: fixed;
+  left: 0;
+  bottom: 50px;
+  z-index: 100;
+
+  padding: 16px;
+}

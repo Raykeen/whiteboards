@@ -1,19 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider  } from "react-router-dom";
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ExcalidrawApp from './excalidraw/ExcalidrawApp';
+import {FabricApp} from "./fabric/FabricApp";
+import { Main } from "./Main";
+import {FabricY} from "./fabricy/FabricY";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Main />
+    },
+
+    {
+        path: "/excalidraw",
+        element: <ExcalidrawApp />
+    },
+    {
+        path: "/fabric",
+        element: <FabricApp />
+    },
+    {
+        path: "/fabricy",
+        element: <FabricY />
+    }
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <RouterProvider router={router} />
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
